@@ -161,45 +161,42 @@ document.addEventListener("keydown", function (evento) {
 // ============================================
 const herramientas = [
     // --- Base ---
-    { nombre: "C / C++",   icono: "devicon-cplusplus-plain",  nivel: 4, categoria: "base", descripcion: "Gestión manual de memoria, estructuras de datos, algoritmos." },
-    { nombre: "JavaScript", icono: "devicon-javascript-plain", nivel: 4, categoria: "base", descripcion: "Lógica asíncrona, DOM, Node.js, APIs." },
-    { nombre: "Python",    icono: "devicon-python-plain",     nivel: 3, categoria: "base", descripcion: "Scripting, automatización, estructuras de datos nativas." },
-    { nombre: "HTML",      icono: "devicon-html5-plain",      nivel: 4, categoria: "base", descripcion: "Estructura semántica, accesibilidad, formularios." },
-    { nombre: "CSS",       icono: "devicon-css3-plain",       nivel: 4, categoria: "base", descripcion: "Flexbox, Grid, responsive design, transiciones." },
-    { nombre: "Git",       icono: "devicon-git-plain",        nivel: 4, categoria: "base", descripcion: "Ramas, merge, rebase, resolución de conflictos." },
-    { nombre: "GitHub",    icono: "devicon-github-original",  nivel: 4, categoria: "base", descripcion: "Repositorios remotos, Pull Requests, Codespaces." },
-    { nombre: "VS Code",   icono: "devicon-vscode-plain",     nivel: 4, categoria: "base", descripcion: "Editor principal, extensiones, debugging." },
-    { nombre: "Bash/Zsh",  icono: "devicon-bash-plain",       nivel: 3, categoria: "base", descripcion: "Terminal, compilación, gestión de entornos." },
+    { nombre: "C / C++",   icono: "devicon-cplusplus-plain",  etiqueta: "intermedio/avanzado", categoria: "base", descripcion: "Gestión manual de memoria, estructuras de datos, algoritmos." },
+    { nombre: "JavaScript", icono: "devicon-javascript-plain", etiqueta: "intermedio/avanzado", categoria: "base", descripcion: "Manipulación del DOM, manejo de eventos y programación orientada a la lógica del navegador." },
+    { nombre: "Python",    icono: "devicon-python-plain",     etiqueta: "intermedio/avanzado", categoria: "base", descripcion: "Scripting, automatización, estructuras de datos nativas." },
+    { nombre: "HTML",      icono: "devicon-html5-plain",      etiqueta: "avanzado", categoria: "base", descripcion: "Estructura semántica, accesibilidad, formularios." },
+    { nombre: "CSS",       icono: "devicon-css3-plain",       etiqueta: "avanzado", categoria: "base", descripcion: "Flexbox, Grid, responsive design, transiciones." },
+    { nombre: "Git",       icono: "devicon-git-plain",        etiqueta: "avanzado", categoria: "base", descripcion: "Ramas, merge, rebase, resolución de conflictos." },
+    { nombre: "GitHub",    icono: "devicon-github-original",  etiqueta: "avanzado", categoria: "base", descripcion: "Repositorios remotos, Pull Requests, Codespaces." },
+    { nombre: "VS Code",   icono: "devicon-vscode-plain",     etiqueta: "avanzado", categoria: "base", descripcion: "Editor principal, extensiones, debugging." },
+    { nombre: "Bash/Zsh",  icono: "devicon-bash-plain",       etiqueta: "intermedio/avanzado", categoria: "base", descripcion: "Terminal, compilación, gestión de entornos." },
 
     // --- Aprendiendo ahora (proyecto de gestión de clases) ---
-    { nombre: "React",     icono: "devicon-react-original",   nivel: 2, categoria: "aprendiendo", descripcion: "Componentes, useState, props." },
-    { nombre: "Next.js",   icono: "devicon-nextjs-plain",     nivel: 2, categoria: "aprendiendo", descripcion: "App Router, rutas, estructura y build." },
-    { nombre: "Tailwind CSS", icono: "devicon-tailwindcss-plain", nivel: 2, categoria: "aprendiendo", descripcion: "Clases utilitarias directo en el JSX." },
-    { nombre: "Node.js",   icono: "devicon-nodejs-plain",     nivel: 2, categoria: "aprendiendo", descripcion: "Entorno de ejecución para correr el proyecto." },
-    { nombre: "npm",       icono: "devicon-npm-original-wordmark", nivel: 2, categoria: "aprendiendo", descripcion: "Gestor de paquetes, scripts de desarrollo." },
-    { nombre: "ESLint",    icono: "devicon-eslint-original",  nivel: 1, categoria: "aprendiendo", descripcion: "Linter para errores y buenas prácticas." },
-    { nombre: "Supabase",  icono: "devicon-supabase-plain",   nivel: 1, categoria: "aprendiendo", descripcion: "Base de datos PostgreSQL y backend as a service." }
+    { nombre: "React",     icono: "devicon-react-original",   etiqueta: "intermedio", categoria: "aprendiendo", descripcion: "Componentes, useState, props." },
+    { nombre: "Next.js",   icono: "devicon-nextjs-plain",     etiqueta: "intermedio", categoria: "aprendiendo", descripcion: "App Router, rutas, estructura y build." },
+    { nombre: "Tailwind CSS", icono: "devicon-tailwindcss-plain", etiqueta: "intermedio", categoria: "aprendiendo", descripcion: "Clases utilitarias directo en el JSX." },
+    { nombre: "Node.js",   icono: "devicon-nodejs-plain",     etiqueta: "intermedio", categoria: "aprendiendo", descripcion: "Entorno de ejecución para correr el proyecto." },
+    { nombre: "npm",       icono: "devicon-npm-original-wordmark", etiqueta: "intermedio", categoria: "aprendiendo", descripcion: "Gestor de paquetes, scripts de desarrollo." },
+    { nombre: "ESLint",    icono: "devicon-eslint-original",  etiqueta: "básico", categoria: "aprendiendo", descripcion: "Linter para errores y buenas prácticas." },
+    { nombre: "Supabase",  icono: "devicon-supabase-plain",   etiqueta: "básico", categoria: "aprendiendo", descripcion: "Base de datos PostgreSQL y backend as a service." }
 ];
 
 // Dibuja una lista de herramientas dentro de un contenedor, con la barra
 // arrancando en 0% (para poder animarla después) y en el color que le pasemos
-function dibujarTarjetas(lista, contenedor, colorBarra) {
+function dibujarTarjetas(lista, contenedor, colorBadge) {
     lista.forEach(function (h) {
-        const porcentaje = (h.nivel / 5) * 100;
         contenedor.innerHTML += `
             <div class="tarjeta-herramienta">
                 <i class="${h.icono}"></i>
                 <h3>${h.nombre}</h3>
                 <p class="texto-xs">${h.descripcion}</p>
-                <div class="barra-nivel">
-                    <div class="barra-nivel-relleno" data-nivel="${porcentaje}" style="background-color: ${colorBarra}"></div>
-                </div>
+                <span class="badge-nivel" style="background-color: ${colorBadge}">${h.etiqueta}</span>
             </div>
         `;
     });
 }
-
 // Filtramos la tabla por categoría y dibujamos cada grupo en su contenedor
+
 const herramientasBase = herramientas.filter(h => h.categoria === "base");
 const herramientasAprendiendo = herramientas.filter(h => h.categoria === "aprendiendo");
 
