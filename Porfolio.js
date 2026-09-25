@@ -161,9 +161,9 @@ document.addEventListener("keydown", function (evento) {
 // ============================================
 const herramientas = [
     // --- Base ---
-    { nombre: "C / C++",   icono: "devicon-cplusplus-plain",  etiqueta: "intermedio/avanzado", categoria: "base", descripcion: "Gestión manual de memoria, estructuras de datos, algoritmos." },
-    { nombre: "JavaScript", icono: "devicon-javascript-plain", etiqueta: "intermedio/avanzado", categoria: "base", descripcion: "Manipulación del DOM, manejo de eventos y programación orientada a la lógica del navegador." },
-    { nombre: "Python",    icono: "devicon-python-plain",     etiqueta: "intermedio/avanzado", categoria: "base", descripcion: "Scripting, automatización, estructuras de datos nativas." },
+    { nombre: "C / C++",   icono: "devicon-cplusplus-plain",  etiqueta:"intermedio/avanzado", categoria: "base", descripcion: "Gestión manual de memoria, estructuras de datos, algoritmos." },
+    { nombre: "JavaScript", icono: "devicon-javascript-plain", etiqueta:"intermedio/avanzado", categoria: "base", descripcion: "Manipulación del DOM, manejo de eventos y programación orientada a la lógica del navegador." },
+    { nombre: "Python",    icono: "devicon-python-plain",     etiqueta:"intermedio/avanzado", categoria: "base", descripcion: "Scripting, automatización, estructuras de datos nativas." },
     { nombre: "HTML",      icono: "devicon-html5-plain",      etiqueta: "avanzado", categoria: "base", descripcion: "Estructura semántica, accesibilidad, formularios." },
     { nombre: "CSS",       icono: "devicon-css3-plain",       etiqueta: "avanzado", categoria: "base", descripcion: "Flexbox, Grid, responsive design, transiciones." },
     { nombre: "Git",       icono: "devicon-git-plain",        etiqueta: "avanzado", categoria: "base", descripcion: "Ramas, merge, rebase, resolución de conflictos." },

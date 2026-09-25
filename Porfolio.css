@@ -229,12 +229,13 @@ li{
 }
 .badge-nivel {
     display: inline-block;
-    font-size: var(--texto-xs);
+    font-size: 0.75rem; /* un poco más chico que --texto-xs, para que entren las etiquetas largas */
     font-weight: bold;
     color: var(--color-texto-boton);
     padding: 4px 12px;
     border-radius: 999px;
     margin-top: var(--espacio-xs);
+    white-space: nowrap; /* evita que el texto se corte en 2 líneas */
 }
 /* Estilos para los botones que enlazan a GitHub */
 .boton-github {
