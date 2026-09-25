@@ -64,6 +64,7 @@ body {
     background-color: var(--color-bg); /* Color de fondo muy oscuro (casi negro) */
     color: var(--color-texto); /* Color del texto gris claro */
     padding: 20px 10px; /* Espacio interno: 20px arriba-abajo, 10px izquierda-derecha */
+    flex-direction: column;
 }
 
 /* Contenedor principal que envuelve el contenido */
@@ -433,11 +434,12 @@ html {
 
 .grid-proyectos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 400px));
+    justify-content: center;
     gap: var(--espacio-md);
+    width: 100%; /* para que el justify-content tenga espacio de sobra donde centrar */
     margin: var(--espacio-md) 0;
 }
-
 .tarjeta-proyecto {
     background-color: var(--color-bg-alt);
     border: 1px solid var(--color-secundario);
