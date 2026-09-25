@@ -3,433 +3,430 @@ VARIABLES GLOBALES (Design Tokens)
 Se definen dentro de :root, que representa 
 la etiqueta <html> — así quedan disponibles 
 en TODO el documento.
-   ============================================ */
+  ============================================ */
 :root {
-    /* --- Colores --- */
-    --color-bg: #16111a;          /* fondo general, un poco menos "plano" que el #230023 original */
-    --color-bg-alt: #1e1824;      /* fondo para tarjetas/secciones destacadas */
-    --color-primario: #ff00ff;    /* magenta, tu color de acento principal */
-    --color-secundario: #00ffcc;  /* cian, tu color de acento secundario */
-    --color-accion: #fcee0a;      /* amarillo, para botones de acción (CTA) */
-    --color-texto: #e0e0e0;       /* texto principal */
-    --color-texto-suave: #a8a3ac; /* texto secundario, menos protagonismo */
-    --color-texto-boton: #0a0a0c;
-    /* --- Tipografía --- */
-    --fuente-principal: 'Inter', 'Bitcount Prop Single', sans-serif;
-    --titulos: 'Bitcount Prop Single', sans-serif;
-    /* Nota: dejamos Bitcount como respaldo/decorativa, pero Inter como 
-       fuente de lectura — más abajo explico por qué */
+/* --- Colores --- */
+--color-bg: #16111a;          /* fondo general, un poco menos "plano" que el #230023 original */
+--color-bg-alt: #1e1824;      /* fondo para tarjetas/secciones destacadas */
+--color-primario: #ff00ff;    /* magenta, tu color de acento principal */
+--color-secundario: #00ffcc;  /* cian, tu color de acento secundario */
+--color-accion: #fcee0a;      /* amarillo, para botones de acción (CTA) */
+--color-texto: #e0e0e0;       /* texto principal */
+--color-texto-suave: #a8a3ac; /* texto secundario, menos protagonismo */
+--color-texto-boton: #0a0a0c;
+/* --- Tipografía --- */
+--fuente-principal: 'Inter', 'Bitcount Prop Single', sans-serif;
+--titulos: 'Bitcount Prop Single', sans-serif;
+/* Nota: dejamos Bitcount como respaldo/decorativa, pero Inter como 
+      fuente de lectura — más abajo explico por qué */
 
-    /* --- Espaciados (para no repetir 10px, 20px, etc. a mano) --- */
-    --espacio-xs: 8px;
-    --espacio-sm: 16px;
-    --espacio-md: 24px;
-    --espacio-lg: 40px;
+/* --- Espaciados (para no repetir 10px, 20px, etc. a mano) --- */
+--espacio-xs: 8px;
+--espacio-sm: 16px;
+--espacio-md: 24px;
+--espacio-lg: 40px;
 
-    /* --- Bordes --- */
-    --radio-borde: 8px;
+/* --- Bordes --- */
+--radio-borde: 8px;
 
-    /* --- Transición estándar, para que todos los hover se sientan iguales --- */
-    --transicion: 0.2s ease;
+/* --- Transición estándar, para que todos los hover se sientan iguales --- */
+--transicion: 0.2s ease;
 
-    /* --- Escala tipográfica ---
-       Cada salto es ~1.25x el anterior (una proporción armónica típica) */
-    --texto-xs: 0.875rem;   /* 14px - notas pequeñas */
-    --texto-base: 1rem;     /* 16px - párrafos */
-    --texto-md: 1.25rem;    /* 20px - subtítulos */
-    --texto-lg: 2rem;       /* 32px - h2 */
-    --texto-xl: 3rem;       /* 48px - h1 */
+/* --- Escala tipográfica ---
+      Cada salto es ~1.25x el anterior (una proporción armónica típica) */
+--texto-xs: 0.875rem;   /* 14px - notas pequeñas */
+--texto-base: 1rem;     /* 16px - párrafos */
+--texto-md: 1.25rem;    /* 20px - subtítulos */
+--texto-lg: 2rem;       /* 32px - h2 */
+--texto-xl: 3rem;       /* 48px - h1 */
 }
 /* Selector universal: aplica estilos a TODOS los elementos de la página */
 *{
-    box-sizing: border-box; /* Incluye el padding y border en el cálculo del ancho/alto total */
-    margin: 0; /* Elimina los márgenes externos predeterminados */
-    padding: 0; /* Elimina el espacio interno predeterminado */
+box-sizing: border-box; /* Incluye el padding y border en el cálculo del ancho/alto total */
+margin: 0; /* Elimina los márgenes externos predeterminados */
+padding: 0; /* Elimina el espacio interno predeterminado */
 }
 
 #fondo-particulas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* lo manda detrás de todo el contenido */
-    background-color: var(--color-bg); /* mismo fondo de base */
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1; /* lo manda detrás de todo el contenido */
+background-color: var(--color-bg); /* mismo fondo de base */
 }
 
 /* Estilos para el elemento body (cuerpo de la página) */
 body {
-    font-family: var(--fuente-principal); /* Establece la fuente del texto (tipografía) */
-    line-height: 1.6; /* Aumenta el espacio entre líneas de texto para mejor legibilidad */
-    background-color: var(--color-bg); /* Color de fondo muy oscuro (casi negro) */
-    color: var(--color-texto); /* Color del texto gris claro */
-    padding: 20px 10px; /* Espacio interno: 20px arriba-abajo, 10px izquierda-derecha */
+font-family: var(--fuente-principal); /* Establece la fuente del texto (tipografía) */
+line-height: 1.6; /* Aumenta el espacio entre líneas de texto para mejor legibilidad */
+background-color: var(--color-bg); /* Color de fondo muy oscuro (casi negro) */
+color: var(--color-texto); /* Color del texto gris claro */
+padding: 20px 10px; /* Espacio interno: 20px arriba-abajo, 10px izquierda-derecha */
     flex-direction: column;
 }
 
 /* Contenedor principal que envuelve el contenido */
 .contenedor{
-    width: 90%; /* El ancho es el 90% del elemento padre. el elemento padre es el html*/
-    max-width: 800px; /* El ancho máximo no puede exceder 800px */
-    margin: 0 auto; /* Centra el elemento horizontalmente (0 arriba-abajo, auto izquierda-derecha) */
-    padding-top: 60px;
+width: 90%; /* El ancho es el 90% del elemento padre. el elemento padre es el html*/
+max-width: 800px; /* El ancho máximo no puede exceder 800px */
+margin: 0 auto; /* Centra el elemento horizontalmente (0 arriba-abajo, auto izquierda-derecha) */
+padding-top: 60px;
 }
 
 /* Estilos para el título principal */
 .titulo{
-    text-align: center; /* Alinea el texto al centro */
-    text-decoration: underline; /* Añade una línea debajo del texto */
-    color: var(--color-primario); /* Color magenta/fucsia */
-    margin-bottom: 20px; /* Espacio debajo del título */
-    font-family: var(--titulos);
+text-align: center; /* Alinea el texto al centro */
+text-decoration: underline; /* Añade una línea debajo del texto */
+color: var(--color-primario); /* Color magenta/fucsia */
+margin-bottom: 20px; /* Espacio debajo del título */
+font-family: var(--titulos);
 }
 
 /* Contenedor para la sección de lenguajes */
 .lenguajes{
-    justify-content: center; /* Centra los elementos de lado a lado (horizontalmente) */
-    align-items: center; /* Centra los elementos de arriba a abajo (verticalmente) */
+justify-content: center; /* Centra los elementos de lado a lado (horizontalmente) */
+align-items: center; /* Centra los elementos de arriba a abajo (verticalmente) */
 }
 
 /* Contenedor flexible para mostrar cursos/logos */
 .Cursos{
-    display: flex; /* Activa el modelo de diseño flexbox */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
-    gap: 10px; /* Espacio de 10px entre los elementos */
+display: flex; /* Activa el modelo de diseño flexbox */
+justify-content: center; /* Centra los elementos horizontalmente */
+align-items: center; /* Centra los elementos verticalmente */
+gap: 10px; /* Espacio de 10px entre los elementos */
 }
 /*mejora visual para el texto*/
 .titulo .h,
 #titulo-principal {
-    font-size: var(--texto-xl);
-    letter-spacing: 1px; /* separa un poco las letras, se ve más "diseñado" */
-    font-family: var(--titulos);
+font-size: var(--texto-xl);
+letter-spacing: 1px; /* separa un poco las letras, se ve más "diseñado" */
+font-family: var(--titulos);
 }
 
 /* Los h2 de cada sección (Herramientas, Cursos, etc.) */
 h2.h {
-    font-family: var(--titulos);
-    font-size: var(--texto-lg);
+font-family: var(--titulos);
+font-size: var(--texto-lg);
 }
 
 /* El párrafo de presentación */
 #parrafo {
-    font-size: var(--texto-md);
-    color: var(--color-texto-suave); /* le baja protagonismo frente al título */
-    max-width: 55ch; /* limita el ancho de línea — mejora mucho la lectura */
+font-size: var(--texto-md);
+color: var(--color-texto-suave); /* le baja protagonismo frente al título */
+max-width: 55ch; /* limita el ancho de línea — mejora mucho la lectura */
 }
 /* Estilos para las imágenes dentro de la clase Cursos */
 .Cursos img{
-    width: 100%; /* El ancho es el 100% de su contenedor */
-    max-width: 320px; /* Pero no puede ser más ancho que 320px */
-    height: 220px; /* La altura se fija para que las imagenes midan lo mismo, sin importar su proporcion original*/
-    object-fit: cover;/*recorta la imagen sin que se deforme */
-    border-radius: var(--radio-borde); /* Redondea las esquinas */
-    border: 1px solid var(--color-primario); /* Borde de 1 píxel sólido de color magenta */
+width: 100%; /* El ancho es el 100% de su contenedor */
+max-width: 320px; /* Pero no puede ser más ancho que 320px */
+height: 220px; /* La altura se fija para que las imagenes midan lo mismo, sin importar su proporcion original*/
+object-fit: cover;/*recorta la imagen sin que se deforme */
+border-radius: var(--radio-borde); /* Redondea las esquinas */
+border: 1px solid var(--color-primario); /* Borde de 1 píxel sólido de color magenta */
 }
 
 /* Estilos para los encabezados de secciones (clase h) */
 .h{
-    text-align: center; /* Alinea el texto al centro */
-    text-decoration: underline; /* Subraya el texto */
-    color: var(--color-primario); /* Color magenta */
-    margin: var(--espacio-md) 0 var(--espacio-sm) 0; /* Espacios: 20px arriba, 0 derecha, 10px abajo, 0 izquierda */
+text-align: center; /* Alinea el texto al centro */
+text-decoration: underline; /* Subraya el texto */
+color: var(--color-primario); /* Color magenta */
+margin: var(--espacio-md) 0 var(--espacio-sm) 0; /* Espacios: 20px arriba, 0 derecha, 10px abajo, 0 izquierda */
 }
 
 /* Estilos para líneas horizontales/separadores (clase r) */
 .r{
-    border: none; /* Quita cualquier borde */
-    height: 2px; /* Altura de 2 píxeles */
-    background-color: var(--color-secundario); /* Color de fondo cian/turquesa */
-    margin: var(--espacio-lg) 0; /* Espacios de 25px arriba y abajo */
+border: none; /* Quita cualquier borde */
+height: 2px; /* Altura de 2 píxeles */
+background-color: var(--color-secundario); /* Color de fondo cian/turquesa */
+margin: var(--espacio-lg) 0; /* Espacios de 25px arriba y abajo */
 }
 
 /* Media query: aplica estilos cuando la pantalla es menor o igual a 900px de ancho */
 @media (max-width: 900px){
-    .texto-imagen{
-        flex-direction: column; /* Cambia la dirección de los elementos a vertical */
-        text-align: center; /* Alinea el texto al centro */
-    }
-    .Cursos{
-        flex-direction: column; /* Cambia la dirección de los elementos a vertical */
-        text-align: center; /* Alinea el texto al centro */
-        gap: 10px;
-    }
+.texto-imagen{
+flex-direction: column; /* Cambia la dirección de los elementos a vertical */
+text-align: center; /* Alinea el texto al centro */
+}
+.Cursos{
+flex-direction: column; /* Cambia la dirección de los elementos a vertical */
+text-align: center; /* Alinea el texto al centro */
+gap: 10px;
+}
 }
 
 /* Contenedor flexible que combina texto e imagen en una fila */
 .texto-imagen{
-    display: flex; /* Activa flexbox para alinear elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
-    justify-content: space-between; /* Distribuye el espacio equitativamente entre los elementos */
-    gap: 20px; /* Espacio de 20px entre los elementos */
+display: flex; /* Activa flexbox para alinear elementos horizontalmente */
+align-items: center; /* Centra los elementos verticalmente */
+justify-content: space-between; /* Distribuye el espacio equitativamente entre los elementos */
+gap: 20px; /* Espacio de 20px entre los elementos */
 }
 
 /* Estilos específicos para imágenes dentro de texto-imagen */
 .texto-imagen img{
-    width: 150px; /* Ancho de 150 píxeles */
-    height: 150px; /* Alto de 150 píxeles */
-    border-radius: 50%; /* Hace la imagen circular (50% = círculo perfecto) */
-    object-fit: cover; /* Escala la imagen para cubrir el área sin distorsionarse */
+width: 150px; /* Ancho de 150 píxeles */
+height: 150px; /* Alto de 150 píxeles */
+border-radius: 50%; /* Hace la imagen circular (50% = círculo perfecto) */
+object-fit: cover; /* Escala la imagen para cubrir el área sin distorsionarse */
 }
 
 /* Estilos para listas ordenadas (ol) y desordenadas (ul) */
 ol,ul{
-    font-family: var(--fuente-principal); /* Fuente principal para las listas */
-    padding-left: 25px; /* Espacio interno de 25px a la izquierda */
-    margin-bottom: 15px; /* Espacio externo de 15px abajo */
+font-family: var(--fuente-principal); /* Fuente principal para las listas */
+padding-left: 25px; /* Espacio interno de 25px a la izquierda */
+margin-bottom: 15px; /* Espacio externo de 15px abajo */
 }
 ol>li>strong,ul>li>strong{/*le cambio el color a lo que esta en negrita de la listas (los titulos)*/
-    color: var(--color-secundario);
-    font-family: var(--titulos);
+color: var(--color-secundario);
+font-family: var(--titulos);
 }
 
 /* Estilos para los elementos de lista (li) */
 li{
-    margin-bottom: 6px; /* Espacio externo de 6px debajo de cada elemento */
+margin-bottom: 6px; /* Espacio externo de 6px debajo de cada elemento */
 }
 /* Grilla responsiva: se acomoda sola según el espacio disponible */
 .grid-herramientas {
     display: grid;
-    /* auto-fill + minmax: crea tantas columnas de mínimo 150px como entren,
-    y las estira para llenar el ancho disponible. Esto es lo que hace
-    que en celular se vea 2 columnas y en desktop 4-5, sin escribir
-    ningún media query para esto en particular */
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* subí de 150px a 180px */
     gap: var(--espacio-sm);
     margin-top: var(--espacio-md);
 }
 .subtitulo-herramientas {
-    color: var(--color-secundario);
-    font-size: var(--texto-md);
-    margin: var(--espacio-md) 0 var(--espacio-xs) 0;
-    text-align: center;
+color: var(--color-secundario);
+font-size: var(--texto-md);
+margin: var(--espacio-md) 0 var(--espacio-xs) 0;
+text-align: center;
 }
 .tarjeta-herramienta {
-    background-color: var(--color-bg-alt);
-    border: 1px solid transparent; /* transparente por defecto, se colorea en hover */
-    border-radius: var(--radio-borde);
-    padding: var(--espacio-sm);
-    text-align: center;
-    transition: border-color var(--transicion), transform var(--transicion);
+background-color: var(--color-bg-alt);
+border: 1px solid transparent; /* transparente por defecto, se colorea en hover */
+border-radius: var(--radio-borde);
+padding: var(--espacio-sm);
+text-align: center;
+transition: border-color var(--transicion), transform var(--transicion);
 }
 
 .tarjeta-herramienta:hover {
-    border-color: var(--color-primario);
-    transform: translateY(-4px); /* se "levanta" sutilmente al pasar el mouse */
+border-color: var(--color-primario);
+transform: translateY(-4px); /* se "levanta" sutilmente al pasar el mouse */
 }
 
 .tarjeta-herramienta i {
-    font-size: 2.5rem; /* tamaño del ícono */
-    color: var(--color-secundario);
-    margin-bottom: var(--espacio-xs);
+font-size: 2.5rem; /* tamaño del ícono */
+color: var(--color-secundario);
+margin-bottom: var(--espacio-xs);
 }
 
 .tarjeta-herramienta h3 {
-    font-size: var(--texto-base);
-    margin-bottom: var(--espacio-xs);
+font-size: var(--texto-base);
+margin-bottom: var(--espacio-xs);
 }
 .badge-nivel {
     display: inline-block;
-    font-size: clamp(0.65rem, 2.5vw, 0.75rem);
+    font-size: clamp(0.6rem, 3vw, 0.75rem); /* achica un poco más el mínimo */
     font-weight: bold;
     color: var(--color-texto-boton);
-    padding: 4px 14px;
+    padding: 4px 10px;
     border-radius: 999px;
-    margin: var(--espacio-xs) auto 0 auto; /* la centra si su contenedor es flex/grid */
-    white-space: nowrap;
-    max-width: fit-content; /* la fuerza a ajustarse solo a su propio texto */
+    margin-top: var(--espacio-xs);
+    max-width: 100%;        /*  volvemos a esto, es la garantía real de "nunca más ancho que la tarjeta" */
+    white-space: normal;    /*  permite partirse en 2 líneas SOLO si no entra, en vez de desbordar */
     text-align: center;
+    box-sizing: border-box;
 }
 /* Estilos para los botones que enlazan a GitHub */
 .boton-github {
-    display: inline-block; /* Se muestra como un bloque en línea (permite padding/ancho) */
-    padding: 10px 20px; /* Espacio interno: 10px arriba-abajo, 20px izquierda-derecha */
-    background-color: var(--color-accion); /* Color de fondo amarillo brillante */
-    color: var(--color-texto-boton); /* Color del texto */
-    text-decoration: none; /* Quita la línea subrayada del enlace */
-    border-radius: var(--radio-borde); /* Redondea las esquinas 6 píxeles */
-    font-weight: bold; /* Pone el texto en negrita */
-    transition: background-color var(--transicion)  ; /* Anima el cambio de color en 0.2 segundos */
+display: inline-block; /* Se muestra como un bloque en línea (permite padding/ancho) */
+padding: 10px 20px; /* Espacio interno: 10px arriba-abajo, 20px izquierda-derecha */
+background-color: var(--color-accion); /* Color de fondo amarillo brillante */
+color: var(--color-texto-boton); /* Color del texto */
+text-decoration: none; /* Quita la línea subrayada del enlace */
+border-radius: var(--radio-borde); /* Redondea las esquinas 6 píxeles */
+font-weight: bold; /* Pone el texto en negrita */
+transition: background-color var(--transicion)  ; /* Anima el cambio de color en 0.2 segundos */
 }
 
 /* Contenedor flexible para organizar los botones */
 .bot{
-    display: flex; /* Activa flexbox */
-    align-items: center; /* Centra los elementos verticalmente */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    gap: var(--espacio-md); /* Espacio de 15px entre los botones */
-    flex-wrap: wrap; /* Permite que los botones se envuelvan si no caben */
+display: flex; /* Activa flexbox */
+align-items: center; /* Centra los elementos verticalmente */
+justify-content: center; /* Centra los elementos horizontalmente */
+gap: var(--espacio-md); /* Espacio de 15px entre los botones */
+flex-wrap: wrap; /* Permite que los botones se envuelvan si no caben */
 }
 
 /* Estilos cuando el cursor está sobre el botón (efecto hover) */
 .boton-github:hover {
-    background-color: var(--color-secundario); /* Cambia el color de fondo a cian cuando pasa el mouse */
-    color: var(--color-texto-boton); /* Mantiene el color del texto */
-    font-family: var(--titulos);
+background-color: var(--color-secundario); /* Cambia el color de fondo a cian cuando pasa el mouse */
+color: var(--color-texto-boton); /* Mantiene el color del texto */
+font-family: var(--titulos);
 }
 
 .seccion-contacto{
-    display: flex;/*activa flexbox. alinea los elementos */
-    flex-direction: column;/*en columnas verticales */
-    align-items: center;/*centra el formulario en medio de la pagina*/
-    width: 100%;/*delimita el ancho que puede ocupar*/
+display: flex;/*activa flexbox. alinea los elementos */
+flex-direction: column;/*en columnas verticales */
+align-items: center;/*centra el formulario en medio de la pagina*/
+width: 100%;/*delimita el ancho que puede ocupar*/
 }
 
 .formulario-contacto{
-    display: flex;/*activa flexbox. alinea los elementos */
-    flex-direction: column;/*en columnas verticales*/
-    width: 100%;/*delimita el ancho que puede ocupar*/
-    max-width: 480px;/*delimita el ancho maximo de pixeles que puede ocupar*/
-    gap: 10px;/*espacio entre elementos*/
-    margin-top: 10px;/*empuja hacia abajo el elemento desde el margen superior*/ 
+display: flex;/*activa flexbox. alinea los elementos */
+flex-direction: column;/*en columnas verticales*/
+width: 100%;/*delimita el ancho que puede ocupar*/
+max-width: 480px;/*delimita el ancho maximo de pixeles que puede ocupar*/
+gap: 10px;/*espacio entre elementos*/
+margin-top: 10px;/*empuja hacia abajo el elemento desde el margen superior*/ 
 }
 
 .formulario-contacto label{/*cambio el color de las "cajas" label*/
-    font-weight: bold;/*texto en negrita*/
-    color: var(--color-secundario);/*color asignado*/
+font-weight: bold;/*texto en negrita*/
+color: var(--color-secundario);/*color asignado*/
 }
 
 .formulario-contacto input, .formulario-contacto textarea{
-    width: 100%;/*delimita el ancho que puede ocupar*/
-    padding: 10px;/*delimita el espacio interno*/
-    background-color: var(--color-bg-alt);/*color del fondo*/
-    border-radius: var(--radio-borde);/*redondea las esquinas*/
-    color: var(--color-texto);/*cambia el color*/
-    font-family: inherit;/*hace que los campos hereden la fuente personalizada que agregue*/
-    font-size: 1.1rem;/*cambia el tamaño de las letras*/
-    font-family: var(--cuerpo);
-    font-family: var(--titulos);
+width: 100%;/*delimita el ancho que puede ocupar*/
+padding: 10px;/*delimita el espacio interno*/
+background-color: var(--color-bg-alt);/*color del fondo*/
+border-radius: var(--radio-borde);/*redondea las esquinas*/
+color: var(--color-texto);/*cambia el color*/
+font-family: inherit;/*hace que los campos hereden la fuente personalizada que agregue*/
+font-size: 1.1rem;/*cambia el tamaño de las letras*/
+font-family: var(--cuerpo);
+font-family: var(--titulos);
 }
 
 .boton-enviar{
-    margin-top: 10px;/*empuja el boton 10px hacia abajo desde el margen superior*/
-    padding: 12px;/*Define el espacio interior en el boton*/
-    background-color: var(--color-accion);/*Cambia el color del fondo*/
-    color: var(--color-texto-boton);/*color del texto*/
-    font-weight: bold;/*pone en texto en negrita*/
-    border: none;/*quita el borde*/
-    border-radius: var(--radio-borde);/*redonde las esquinas*/
-    cursor: pointer;/*cambia el cursor cuando paso sobre el boton*/
-    font-family: inherit;/*hereda la fuente(tipo de letra)*/
-    transition: background-color var(--transicion), transform var(--transicion);/*anima cambios de color y transformacion */
+margin-top: 10px;/*empuja el boton 10px hacia abajo desde el margen superior*/
+padding: 12px;/*Define el espacio interior en el boton*/
+background-color: var(--color-accion);/*Cambia el color del fondo*/
+color: var(--color-texto-boton);/*color del texto*/
+font-weight: bold;/*pone en texto en negrita*/
+border: none;/*quita el borde*/
+border-radius: var(--radio-borde);/*redonde las esquinas*/
+cursor: pointer;/*cambia el cursor cuando paso sobre el boton*/
+font-family: inherit;/*hereda la fuente(tipo de letra)*/
+transition: background-color var(--transicion), transform var(--transicion);/*anima cambios de color y transformacion */
 }
 .boton-enviar:hover{
-    background-color: var(--color-secundario);/*color del fondo al pasar el cursor*/
-    transform: translateY(-2px);/*se mueve 2px hacia arriba cuando pasa el cursos por arriba*/
-    font-family: var(--titulos);
+background-color: var(--color-secundario);/*color del fondo al pasar el cursor*/
+transform: translateY(-2px);/*se mueve 2px hacia arriba cuando pasa el cursos por arriba*/
+font-family: var(--titulos);
 }
 
 /* Lightbox: fondo oscuro que cubre toda la pantalla */
 .lightbox {
-    display: none; /* hace que no se vea hasta que se interacute con el */
-    position: fixed; /* se queda fijo aunque hagas scroll */
-    top: 0;
-    left: 0;
-    width: 100%;/*hace que ocupe toda la pantalla*/
-    height: 100%;/*hace que ocupe toda la pantalla*/
-    background-color: rgba(0, 0, 0, 0.9); /* fondo negro semi-transparente */
-    z-index: 1000; /* por encima de todo lo demás */
-    justify-content: center; /* centra la imagen horizontalmente (con flex) */
-    align-items: center; /* centra la imagen verticalmente (con flex) */
+display: none; /* hace que no se vea hasta que se interacute con el */
+position: fixed; /* se queda fijo aunque hagas scroll */
+top: 0;
+left: 0;
+width: 100%;/*hace que ocupe toda la pantalla*/
+height: 100%;/*hace que ocupe toda la pantalla*/
+background-color: rgba(0, 0, 0, 0.9); /* fondo negro semi-transparente */
+z-index: 1000; /* por encima de todo lo demás */
+justify-content: center; /* centra la imagen horizontalmente (con flex) */
+align-items: center; /* centra la imagen verticalmente (con flex) */
 }
 
 /* Cuando tiene la clase "activo", se muestra usando flexbox para centrar */
 .lightbox.activo {/*cuando js le agrega la clase activo pasa esto*/
-    display: flex;
+display: flex;
 }
 
 /* La imagen dentro del lightbox */
 .lightbox img {/*selecciona la imagen dentro del .lightbox*/
-    max-width: 90%; /* nunca más ancha que el 90% de la pantalla */
-    max-height: 85vh; /* nunca más alta que el 85% del alto visible */
-    border-radius: var(--radio-borde);/*redondea las esquinas*/
-    box-shadow: 0 0 30px rgba(255, 0, 255, 0.4); /* brillo sutil magenta, en los bordes */
+max-width: 90%; /* nunca más ancha que el 90% de la pantalla */
+max-height: 85vh; /* nunca más alta que el 85% del alto visible */
+border-radius: var(--radio-borde);/*redondea las esquinas*/
+box-shadow: 0 0 30px rgba(255, 0, 255, 0.4); /* brillo sutil magenta, en los bordes */
 }
 
 /* Botón de cerrar (la "X") */
 .lightbox-cerrar {
-    position: absolute;/*el boton se situa de tal forma que la imagen no lo tape*/
-    top: 20px;
-    right: 30px;
-    background: none;/*background: none; border: none;: quitan el fondo y borde por defecto que traen los <button> del navegador, para que se vea solo el símbolo "×".*/
-    border: none;
-    color: #ffffff;
-    font-size: 2.5rem;
-    cursor: pointer;/*cambia el cursor*/
-    line-height: 1;/*ajusta la X para que quede cetrada */
-    transition: color 0.2s ease;
+position: absolute;/*el boton se situa de tal forma que la imagen no lo tape*/
+top: 20px;
+right: 30px;
+background: none;/*background: none; border: none;: quitan el fondo y borde por defecto que traen los <button> del navegador, para que se vea solo el símbolo "×".*/
+border: none;
+color: #ffffff;
+font-size: 2.5rem;
+cursor: pointer;/*cambia el cursor*/
+line-height: 1;/*ajusta la X para que quede cetrada */
+transition: color 0.2s ease;
 }
 
 .lightbox-cerrar:hover {
-    color: var(--color-primario); /* magenta al pasar el mouse */
+color: var(--color-primario); /* magenta al pasar el mouse */
 }
 
 /* Hace que las imágenes de cursos muestren que son clickeables */
 .Cursos img {
-    cursor: pointer;
-    transition: transform 0.2s ease;/**/
+cursor: pointer;
+transition: transform 0.2s ease;/**/
 }
 
 .Cursos img:hover {/*pasa cando tengo el cursor arriba*/
-    transform: scale(1.03);/*hace un poco mas grande la imagen */
+transform: scale(1.03);/*hace un poco mas grande la imagen */
 }
 
 /* Hace que los saltos entre secciones (por los href="#algo") sean animados y suaves en vez de instantáneos */
 html {
-    scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 /* Contenedor del menú de accesos rápidos */
 .menu-rapido {
-    display: flex;          /* activa flexbox — necesario para que justify-content funcione */
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999; /*fuerza que el menu aparezca por encima del resto del contenido*/
-    background-color: var(--color-bg);
-    justify-content: center; /* ahora sí centra los botones horizontalmente */
-    flex-wrap: wrap;         /* si no entran en una línea, pasan a la siguiente */
-    gap: 10px;               /* espacio entre cada botón */
-    margin: 0;
-    padding: 12px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+display: flex;          /* activa flexbox — necesario para que justify-content funcione */
+position: sticky;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 999; /*fuerza que el menu aparezca por encima del resto del contenido*/
+background-color: var(--color-bg);
+justify-content: center; /* ahora sí centra los botones horizontalmente */
+flex-wrap: wrap;         /* si no entran en una línea, pasan a la siguiente */
+gap: 10px;               /* espacio entre cada botón */
+margin: 0;
+padding: 12px 0;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* Cada link del menú, estilizado como un botón */
 .menu-item {
-    padding: 10px 20px; /* espacio interno arriba/abajo e izquierda/derecha */
-    background-color: transparent; /* fondo transparente por defecto */
-    color: var(--color-secundario); /* color cian, igual que el resto de los acentos secundarios de la página */
-    border: 1px solid var(--color-secundario); /* borde del mismo color, para que se note el "botón" aunque el fondo sea transparente */
-    border-radius: var(--radio-borde); /* esquinas redondeadas */
-    text-decoration: none; /* quita el subrayado de los links */
-    font-weight: bold;/*pone el texto en negrita*/
-    transition: background-color var(--transicion), color var(--transicion); /* anima el cambio de colores al pasar el mouse */
+padding: 10px 20px; /* espacio interno arriba/abajo e izquierda/derecha */
+background-color: transparent; /* fondo transparente por defecto */
+color: var(--color-secundario); /* color cian, igual que el resto de los acentos secundarios de la página */
+border: 1px solid var(--color-secundario); /* borde del mismo color, para que se note el "botón" aunque el fondo sea transparente */
+border-radius: var(--radio-borde); /* esquinas redondeadas */
+text-decoration: none; /* quita el subrayado de los links */
+font-weight: bold;/*pone el texto en negrita*/
+transition: background-color var(--transicion), color var(--transicion); /* anima el cambio de colores al pasar el mouse */
 }
 
 /* Efecto al pasar el mouse por encima de un link del menú */
 .menu-item:hover {
-    background-color: var(--color-secundario); /* se rellena con el color cian */
-    color: var(--color-texto-boton); /* el texto pasa a oscuro para mantener contraste */
-    font-family: var(--titulos);
+background-color: var(--color-secundario); /* se rellena con el color cian */
+color: var(--color-texto-boton); /* el texto pasa a oscuro para mantener contraste */
+font-family: var(--titulos);
 }
 
 /* Por defecto (o si el usuario prefiere oscuro), usamos las variables ya definidas arriba */
 
 /* Cuando el sistema del usuario está en modo claro */
 @media (prefers-color-scheme: light) {
-    :root {
-        --color-bg: #ffffff;
-        --color-bg-alt: #f5f3f7;
-        --color-texto: #1a1520;
-        --color-texto-suave: #4a4550;
-        --color-texto-boton: #0a0a0c;
-        /* los acentos (primario, secundario, accion) se pueden mantener igual,
-           o suavizarlos un poco para que no "quemen" sobre fondo claro: */
-        --color-primario: #c400c4;
-        --color-secundario: #009e88;
-    }
+:root {
+--color-bg: #ffffff;
+--color-bg-alt: #f5f3f7;
+--color-texto: #1a1520;
+--color-texto-suave: #4a4550;
+--color-texto-boton: #0a0a0c;
+/* los acentos (primario, secundario, accion) se pueden mantener igual,
+          o suavizarlos un poco para que no "quemen" sobre fondo claro: */
+--color-primario: #c400c4;
+--color-secundario: #009e88;
+}
 }
 
 .grid-proyectos {
@@ -440,67 +437,67 @@ html {
     width: 100%; /* para que el justify-content tenga espacio de sobra donde centrar */
     margin: var(--espacio-md) 0;
 }
+
 .tarjeta-proyecto {
-    background-color: var(--color-bg-alt);
-    border: 1px solid var(--color-secundario);
-    border-radius: var(--radio-borde);
-    padding: var(--espacio-md);
-    text-align: left;
-    transition: transform var(--transicion);
+background-color: var(--color-bg-alt);
+border: 1px solid var(--color-secundario);
+border-radius: var(--radio-borde);
+padding: var(--espacio-md);
+text-align: left;
+transition: transform var(--transicion);
 }
 
 .tarjeta-proyecto:hover {
-    transform: translateY(-4px);
+transform: translateY(-4px);
 }
 
 .tarjeta-proyecto h3 {
-    color: var(--color-primario);
-    margin-bottom: var(--espacio-xs);
+color: var(--color-primario);
+margin-bottom: var(--espacio-xs);
 }
 
 .tarjeta-proyecto p {
-    font-size: var(--texto-xs);
-    color: var(--color-texto-suave);
-    margin-bottom: var(--espacio-sm);
+font-size: var(--texto-xs);
+color: var(--color-texto-suave);
+margin-bottom: var(--espacio-sm);
 }
 
 .badge-estado {
-    display: inline-block;
-    font-size: var(--texto-xs);
-    font-weight: bold;
-    padding: 4px 10px;
-    border-radius: 999px;
-    margin-bottom: var(--espacio-sm);
+display: inline-block;
+font-size: var(--texto-xs);
+font-weight: bold;
+padding: 4px 10px;
+border-radius: 999px;
+margin-bottom: var(--espacio-sm);
 }
 
 .badge-en-desarrollo {
-    background-color: var(--color-accion);
-    color: var(--color-texto-boton);
+background-color: var(--color-accion);
+color: var(--color-texto-boton);
 }
 
 .tags-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: var(--espacio-sm);
+display: flex;
+flex-wrap: wrap;
+gap: 6px;
+margin-bottom: var(--espacio-sm);
 }
 
 .tag {
-    font-size: var(--texto-xs);
-    background-color: var(--color-bg);
-    color: var(--color-secundario);
-    padding: 3px 8px;
-    border-radius: 6px;
+font-size: var(--texto-xs);
+background-color: var(--color-bg);
+color: var(--color-secundario);
+padding: 3px 8px;
+border-radius: 6px;
 }
 
 .tarjeta-proyecto a {
-    color: var(--color-accion);
-    font-weight: bold;
-    font-size: var(--texto-xs);
-    text-decoration: none;
+color: var(--color-accion);
+font-weight: bold;
+font-size: var(--texto-xs);
+text-decoration: none;
 }
 
 .tarjeta-proyecto a:hover {
-    text-decoration: underline;
+text-decoration: underline;
 }
-
