@@ -230,15 +230,15 @@ li{
 }
 .badge-nivel {
     display: inline-block;
-    font-size: clamp(0.65rem, 2.5vw, 0.75rem); /* se achica solo en pantallas chicas */
+    font-size: clamp(0.65rem, 2.5vw, 0.75rem);
     font-weight: bold;
     color: var(--color-texto-boton);
-    padding: 4px 10px;
+    padding: 4px 14px;
     border-radius: 999px;
-    margin-top: var(--espacio-xs);
+    margin: var(--espacio-xs) auto 0 auto; /* la centra si su contenedor es flex/grid */
     white-space: nowrap;
-    max-width: 100%;      /* nunca más ancha que su tarjeta */
-    box-sizing: border-box;
+    max-width: fit-content; /* la fuerza a ajustarse solo a su propio texto */
+    text-align: center;
 }
 /* Estilos para los botones que enlazan a GitHub */
 .boton-github {
