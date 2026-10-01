@@ -469,6 +469,32 @@ margin-bottom: var(--espacio-sm);
     border-left: 2px solid var(--color-secundario);
     padding-left: var(--espacio-xs);
 }
+.que-puedo-hacer {
+    text-align: center;
+    margin: var(--espacio-sm) 0;
+}
+
+.que-puedo-hacer-titulo {
+    font-size: var(--texto-xs);
+    color: var(--color-texto-suave);
+    margin-bottom: var(--espacio-xs);
+}
+
+.tags-servicios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tag-servicio {
+    font-size: var(--texto-xs);
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-secundario);
+    color: var(--color-secundario);
+    padding: 5px 12px;
+    border-radius: 999px;
+}
 .badge-estado {
 display: inline-block;
 font-size: var(--texto-xs);
