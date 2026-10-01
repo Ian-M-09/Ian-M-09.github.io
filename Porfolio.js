@@ -218,7 +218,8 @@ const proyectos = [
     {
         nombre: "Sistema de Gestión de Turnos",
         estado: "En desarrollo",
-        descripcion: "App web para profesores particulares: los alumnos eligen día/horario según disponibilidad, suben comprobante de pago y materia. El turno pasa por estados pendiente/confirmado/cancelado según validación del profesor.",
+        descripcion: "App web para gestionar turnos y citas.",
+        aplicacion: "Ideal para cualquier negocio que gestione turnos o citas con pago previo: peluquerías, talleres, consultorios, clases particulares, etc.",
         stack: ["React", "Next.js", "Tailwind", "Supabase"],
         link: "https://github.com/Ian-M-09" // reemplazar por el repo real cuando lo subas
     }
@@ -234,6 +235,7 @@ proyectos.forEach(function (p) {
             <span class="badge-estado badge-en-desarrollo">${p.estado}</span>
             <h3>${p.nombre}</h3>
             <p>${p.descripcion}</p>
+            <p class="aplicacion-proyecto"> ${p.aplicacion}</p>
             <div class="tags-stack">${tags}</div>
             <a href="https://github.com/Ian-M-09/sistema-turnos-clases" target="_blank" rel="noopener noreferrer">Ver repositorio →</a>
         </div>

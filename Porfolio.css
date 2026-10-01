@@ -430,7 +430,7 @@ font-family: var(--titulos);
 }
 
 .grid-proyectos {
-    display: grid;
+display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 400px));
     justify-content: center;
     gap: var(--espacio-md);
@@ -461,7 +461,14 @@ font-size: var(--texto-xs);
 color: var(--color-texto-suave);
 margin-bottom: var(--espacio-sm);
 }
-
+.aplicacion-proyecto {
+    font-size: var(--texto-xs);
+    color: var(--color-secundario);
+    font-style: italic;
+    margin-bottom: var(--espacio-sm);
+    border-left: 2px solid var(--color-secundario);
+    padding-left: var(--espacio-xs);
+}
 .badge-estado {
 display: inline-block;
 font-size: var(--texto-xs);
