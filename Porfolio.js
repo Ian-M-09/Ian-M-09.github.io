@@ -89,6 +89,7 @@ const certificados = [
     { titulo: "Certificado 1", archivo: "assets/certificados/curso-01.jpg" },
     { titulo: "Certificado 2", archivo: "assets/certificados/curso-02.jpg" },
     {titulo: "Certificado 3", archivo: "assets/certificados/curso-03.jpg"},
+    {titulo: "Certificado 4", archivo: "assets/certificados/curso-04.jpg"},
     // Nuevo curso: agregar un objeto más acá
 ];
 
