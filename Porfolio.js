@@ -90,6 +90,7 @@ const certificados = [
     { titulo: "Certificado 2", archivo: "assets/certificados/curso-02.jpg" },
     {titulo: "Certificado 3", archivo: "assets/certificados/curso-03.jpg"},
     {titulo: "Certificado 4", archivo: "assets/certificados/curso-04.jpg"},
+    {titulo: "Certificado 5", archivo: "assets/certificados/curso-05.jpg"},
     // Nuevo curso: agregar un objeto más acá
 ];
 
@@ -218,11 +219,21 @@ setTimeout(function () {
 const proyectos = [
     {
         nombre: "Sistema de Gestión de Turnos",
-        estado: "En desarrollo",
-        descripcion: "App web para gestionar turnos y citas.",
+        estado: "Terminado",
+        descripcion: "App web de reservas en producción para M&amp;R Academia. Los alumnos eligen día y horario, pagan por transferencia y suben el comprobante; cada profesor confirma los turnos desde su panel.",
         aplicacion: "Ideal para cualquier negocio que gestione turnos o citas con pago previo: peluquerías, talleres, consultorios, clases particulares, etc.",
-        stack: ["React", "Next.js", "Tailwind", "Supabase"],
-        link: "https://github.com/Ian-M-09" // reemplazar por el repo real cuando lo subas
+        stack: ["React", "Next.js", "Tailwind", "Supabase", "Gemini API", "Netlify"],
+        demo: "https://m-r-academia.netlify.app/",
+        repo: "https://github.com/Ian-M-09/sistema-turnos-clases"
+    },
+    {
+        nombre: "Krakethon",
+        estado: "En desarrollo",
+        descripcion: "Plataforma de scouting de League of Legends para LATAM, creada para la KRANKETHON 2026. Ofrece perfiles con estadísticas verificadas por la API de Riot, informes de scouting con IA y compatibilidad entre jugadores y equipos.",
+        aplicacion: "Ideal para equipos amateur y semiprofesionales que buscan jugadores, y para jugadores que quieren mostrar un perfil confiable.",
+        stack: ["React", "Next.js", "Tailwind", "Supabase", "Gemini API", "Riot API", "Vercel"],
+        demo: "https://krakenthon2026.vercel.app/",
+        repo: "https://github.com/Ian-M-09/Krakenthon_2026"
     }
     // Nuevo proyecto: agregar un objeto más acá cuando termine o empiece otro
 ];
@@ -231,14 +242,19 @@ const contenedorProyectos = document.querySelector(".grid-proyectos");
 
 proyectos.forEach(function (p) {
     const tags = p.stack.map(t => `<span class="tag">${t}</span>`).join("");
+    // El color del badge depende del estado del proyecto
+    const claseEstado = p.estado === "Terminado" ? "badge-terminado" : "badge-en-desarrollo";
     contenedorProyectos.innerHTML += `
         <div class="tarjeta-proyecto">
-            <span class="badge-estado badge-en-desarrollo">${p.estado}</span>
+            <span class="badge-estado ${claseEstado}">${p.estado}</span>
             <h3>${p.nombre}</h3>
             <p>${p.descripcion}</p>
             <p class="aplicacion-proyecto"> ${p.aplicacion}</p>
             <div class="tags-stack">${tags}</div>
-            <a href="https://github.com/Ian-M-09/sistema-turnos-clases" target="_blank" rel="noopener noreferrer">Ver repositorio →</a>
+            <div class="enlaces-proyecto">
+                <a href="${p.demo}" target="_blank" rel="noopener noreferrer">Ver sitio →</a>
+                <a href="${p.repo}" target="_blank" rel="noopener noreferrer">Ver repositorio →</a>
+            </div>
         </div>
     `;
 });

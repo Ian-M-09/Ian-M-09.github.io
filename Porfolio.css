@@ -509,6 +509,17 @@ background-color: var(--color-accion);
 color: var(--color-texto-boton);
 }
 
+.badge-terminado {
+background-color: var(--color-secundario);
+color: var(--color-texto-boton);
+}
+
+.enlaces-proyecto {
+display: flex;
+flex-wrap: wrap;
+gap: var(--espacio-sm);
+}
+
 .tags-stack {
 display: flex;
 flex-wrap: wrap;
